@@ -8,6 +8,10 @@ const { Member } = db;
 
 app.use(express.json()); //middleware: request 의 body 에 json 이 있으면 이걸 body property 에 할당.
 
+app.get('/', (req, res) => {
+  res.send('URL should contain /api/..');
+});
+
 app.get('/api/members', async (req, res) => {
   const { team } = req.query;
   if (team) {
